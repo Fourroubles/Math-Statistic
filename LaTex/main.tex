@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article} %14pt - extarticle
+\usepackage[utf8]{inputenc} %русский язык, не менять
+\usepackage[T2A, T1]{fontenc} %русский язык, не менять
+\usepackage[english, russian]{babel} %русский язык, не мен
+\usepackage{hyperref} %гиперссылки
+\hypersetup{pdfstartview=FitH,  linkcolor=black, urlcolor=blue, colorlinks=true} %гиперссылки
+\usepackage{subfiles}%включение тех-текста
+\usepackage{graphicx} %изображения
+\usepackage{float}%картинки где угодно
+\usepackage{textcomp}
+\usepackage{fancyvrb} %fancy verbatim for \VerbatimInput
+\usepackage{dsfont}%мат. символы
+\usepackage{amsmath} %common math symbols
+\usepackage[warn]{mathtext}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{listings} %code formatting
+\newcommand{\RomanNumeralCaps}[1]
+{\MakeUppercase{\romannumeral #1}}
+\usepackage[linesnumbered, ruled]{algorithm2e}%pseudocode 
+\usepackage{autonum}
+\SetKwRepeat{Do}{do}{while}
+\lstset{language=python,
+	%keywordstyle=\color{blue},
+	%commentstyle=\color{},
+	%stringstyle=\color{red},
+	tabsize=1,
+	breaklines=true,
+	columns=fullflexible,
+	%numbers=left,
+	escapechar=@,
+	morekeywords={numpy, np}
+}
+
+\textwidth=16cm
+\oddsidemargin=0cm %поля (отступ слева)
+\topmargin=-1cm %поля (отступ сверху)
+\textheight=23cm
+
+\begin{document}
+	\subfile{title}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\newpage
+	\section{Постановка задачи}
+	\subfile{task.tex}
+	\newpage
+	\section{Теория}
+	\subfile{theory.tex}
+	\newpage
+	\section{Реализация}
+	\subfile{realization.tex}
+	\newpage
+	\section{Результат}
+	\subfile{result.tex}
+	\newpage
+	\section{Обсуждение}
+	\subfile{discussion.tex}
+	\newpage
+	\section{Приложение}
+	\subfile{application.tex}
+	\newpage
+	\section{Список литературы}
+	\subfile{literature.tex}
+\end{document}
+
